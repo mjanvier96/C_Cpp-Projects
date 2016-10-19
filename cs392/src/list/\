@@ -1,0 +1,12 @@
+#include "my.h"
+#include "list.h"
+
+void add_elem(void* elem, struct s_node** head){
+	if(elem && head && *head){
+		struct s_node* node = (struct s_node*)malloc(sizeof(struct s_node));
+		node->next = (*head);
+		node->elem = elem;
+		node->prev = NULL;
+	}
+	return;
+}
